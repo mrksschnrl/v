@@ -1,0 +1,72 @@
+/* File: /v/packages/file-sort/css/file-sort.css */
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.output-box {
+  background: #222;
+  color: #eee;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 1px solid #333;
+  margin-bottom: 2rem;
+}
+
+/* === Styles für Raw-Inputs mit pattern="\d{8}" === */
+
+/* Basis-Style für alle Text-Inputs mit Pattern */
+input[type="text"][pattern] {
+  border: 1px solid #444;
+  background-color: #111;
+  color: #eee;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Roter Rahmen, wenn Pattern-Mismatch und nicht leer */
+input[type="text"][pattern]:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Grüner Rahmen, wenn Pattern gültig */
+input[type="text"][pattern]:valid {
+  border-color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
+}
