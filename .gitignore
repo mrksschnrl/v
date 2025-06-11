@@ -1,0 +1,25 @@
+########################
+#  File-Sort .gitignore
+########################
+
+# PHP / Composer
+vendor/
+*.log
+
+# Node (falls später genutzt)
+node_modules/
+npm-debug.log
+
+# Betriebssystem-Müll
+.DS_Store
+Thumbs.db
+
+# IDEs / Editoren
+.idea/
+.vscode/
+
+# Projekt-spezifisch
+.env
+file-sort.zip
+log/
+output/
