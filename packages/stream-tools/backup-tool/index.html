@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PWA Backup Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <h1>📁 PWA Backup Tool</h1>
+
+    <fieldset>
+      <legend>🔧 Optionen</legend>
+      <label><input type="checkbox" id="optSilent" checked> Silent Mode (DOM entlasten)</label><br>
+      <label><input type="checkbox" id="optProgress" checked> Fortschrittsbalken anzeigen</label><br>
+      <label><input type="checkbox" id="optLogFile" checked> Logfile speichern</label>
+    </fieldset>
+
+    <div class="controls">
+      <button onclick="chooseOriginal()">📂 Original wählen</button>
+      <button onclick="chooseBackup()">📂 Backup wählen</button>
+      <button onclick="chooseLogFolder()">🗂 Log-Ordner wählen</button>
+      <button onclick="startBackup()">🚀 Backup starten</button>
+      <button onclick="exportLog()">💾 Log manuell speichern</button>
+    </div>
+
+    <div id="progressbar"><div id="bar"></div></div>
+    <pre id="logOutput">Wähle Ordner und starte das Backup...</pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

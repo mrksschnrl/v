@@ -1,0 +1,52 @@
+/* === logo-start.css – Intro-Logo (V über O, schlicht & klein) ===== */
+
+/* Zentrierung nur für die Start-Seite */
+body.logo-start-page {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000; /* tiefschwarz */
+  overflow: hidden;
+}
+
+/* Äußerer Wrapper */
+.logo-group {
+  position: relative;
+  width: 150px; /* kleiner als zuvor */
+  height: 150px;
+}
+
+/* Innerer Stapel */
+.logo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* O-SVG (Kreis) bildet die Basis */
+.logo-circle {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: #fff; /* reinweiß */
+  filter: invert(1); /* macht das V weiß, falls es schwarz war */
+}
+
+/* V-SVG exakt zentriert über dem Kreis */
+.logo-v {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* etwas kleiner als Kreis */
+  height: 100%;
+  transform: translate(-50%, -50%);
+  display: block;
+  fill: #fff; /* reinweiß */
+  filter: invert(1); /* macht das V weiß, falls es schwarz war */
+}
+
+/* Keine Effekte, kein Hover, kein Shadow */

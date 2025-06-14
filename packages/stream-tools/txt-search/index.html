@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#333" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Intelli-Search</title>
+</head>
+<body class="theme-minimal theme-light">
+  <header>
+    <h1>Intelli-Search</h1>
+    <div class="theme-controls">
+      <label>
+        Stil:
+        <select id="style-select">
+          <option value="minimal">Minimal</option>
+          <option value="modern">Modern</option>
+        </select>
+      </label>
+      <label>
+        Farbschema:
+        <select id="color-select">
+          <option value="light">Hell</option>
+          <option value="dark">Dunkel</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section id="upload-section">
+      <label for="file-input">Textdateien wählen oder Ordner auswählen:</label>
+      <input type="file" id="file-input" multiple webkitdirectory />
+    </section>
+
+    <section id="search-section">
+      <input type="text" id="search-input" placeholder="Suchbegriff, Datum oder .mp3" />
+      <button id="search-button">Suchen</button>
+    </section>
+
+    <section id="results-section">
+      <h2>Ergebnisse</h2>
+      <ul id="results-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    const styleSelect = document.getElementById('style-select');
+    const colorSelect = document.getElementById('color-select');
+
+    styleSelect.addEventListener('change', () => {
+      document.body.classList.remove('theme-minimal', 'theme-modern');
+      document.body.classList.add(`theme-${styleSelect.value}`);
+    });
+
+    colorSelect.addEventListener('change', () => {
+      document.body.classList.remove('theme-light', 'theme-dark');
+      document.body.classList.add(`theme-${colorSelect.value}`);
+    });
+
+    const fileInput = document.getElementById('file-input');
+    const searchInput = document.getElementById('search-input');
+    const resultsList = document.getElementById('results-list');
+
+    document.getElementById('search-button').addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (!query) return;
+      resultsList.innerHTML = '';
+
+      const files = Array.from(fileInput.files);
+      if (files.length === 0) {
+        alert('Bitte zuerst Dateien auswählen.');
+        return;
+      }
+
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const lines = reader.result.split('\n');
+          lines.forEach((line, index) => {
+            if (line.toLowerCase().includes(query.toLowerCase())) {
+              const context = [
+                lines[index - 2] || '',
+                lines[index - 1] || '',
+                line,
+                lines[index + 1] || '',
+                lines[index + 2] || ''
+              ];
+              const li = document.createElement('li');
+              li.innerHTML = `
+                <strong>${file.name}</strong> – Zeile ${index + 1}<br>
+                <pre>${context.join('\n')}</pre>
+              `;
+              resultsList.appendChild(li);
+            }
+          });
+        };
+        reader.readAsText(file);
+      });
+    });
+  </script>
+</body>
+</html>

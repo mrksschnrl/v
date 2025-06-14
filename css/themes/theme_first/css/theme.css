@@ -1,0 +1,106 @@
+/* === theme.css – Farben, Layout-Ergänzungen === */
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #f44336;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.custom-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.control-indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #555;
+  border-radius: 50%;
+  position: relative;
+}
+
+input[type="radio"]:checked + .control-indicator {
+  background-color: #ffd700;
+}
+
+/* === Einheitliches Panel-Styling für alle Sektionen inkl. Konsole === */
+form#file-sort-form fieldset,
+#console-panel {
+  background-color: #222; /* dunkles Panel */
+  border: 1px solid #333; /* dezenter Rahmen */
+  border-radius: 6px; /* weiche Ecken */
+  padding: 1rem; /* Innenabstand */
+  margin-bottom: 1.5rem; /* Abstand nach unten */
+}
+
+/* Gemeinsame Legend-Stile */
+form#file-sort-form fieldset legend,
+#console-panel legend {
+  color: #ffd700; /* Theme-Gold */
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Log-Container innerhalb des Console-Panels */
+#console-panel #log {
+  background-color: #111; /* sehr dunkler Hintergrund */
+  border: 1px solid #444; /* feiner Innenrahmen */
+  border-radius: 4px;
+  padding: 0.5rem; /* Luft innen */
+  font-family: monospace; /* Konsolen-Font */
+  font-size: 0.85rem;
+  color: #eee; /* helle Schrift */
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap; /* Zeilenumbruch bewahren */
+}
+/* === Container-Basis: 50 % Breite, zentriert, mit Min/Max === */
+.container {
+  width: 50%;
+  min-width: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === Responsive Anpassungen === */
+/* Bis 1200 px Viewport-Breite: 70 % */
+@media (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+}
+
+/* Bis 800 px Viewport-Breite: 90 % */
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* Bis 500 px Viewport-Breite: 100 % plus Padding reduzieren */
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#333" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Intelli-Search</title>
+</head>
+<body class="theme-minimal theme-light">
+  <header>
+    <h1>Intelli-Search</h1>
+    <div class="theme-controls">
+      <label>
+        Stil:
+        <select id="style-select">
+          <option value="minimal">Minimal</option>
+          <option value="modern">Modern</option>
+        </select>
+      </label>
+      <label>
+        Farbschema:
+        <select id="color-select">
+          <option value="light">Hell</option>
+          <option value="dark">Dunkel</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section id="upload-section">
+      <label for="file-input-txt">Einzelne .txt-Dateien wählen:</label>
+      <input type="file" id="file-input-txt" multiple accept=".txt" />
+      <br />
+      <label for="file-input-dir">Ordner auswählen:</label>
+      <input type="file" id="file-input-dir" multiple webkitdirectory />
+    </section>
+
+    <section id="search-section">
+      <input type="text" id="search-input" placeholder="Suchbegriff, Datum oder .mp3" />
+      <button id="search-button">Suchen</button>
+    </section>
+
+    <section id="results-section">
+      <h2>Ergebnisse</h2>
+      <ul id="results-list"></ul>
+    </section>
+  </main>
+
+  <div id="modal-overlay">
+    <div id="modal-content">
+      <span id="modal-close">X</span>
+      <div id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="custom-parser.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "PWA Backup Tool",
+  "short_name": "BackupTool",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#4caf50",
+  "icons": []
+}

@@ -1,0 +1,86 @@
+<?php
+/* Basis-Pfad zum Theme-CSS-Ordner */
+$themeBase = '/v/css/themes/theme_first/css';
+?>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Leuchtendes Logo</title>
+
+    <!-- Grund-Styles -->
+    <link rel="stylesheet" href="<?= $themeBase ?>/base.css" />
+
+    <!-- Startseiten-Spezial-Styles -->
+    <link rel="stylesheet" href="<?= $themeBase ?>/start.css" />
+  </head>
+
+  <body class="start-page">
+    <!-- spezielle Klasse, falls nötig -->
+
+    <!-- Three.js & Helper -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/examples/js/loaders/SVGLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+      /* Grund-Szene */
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x000000);
+
+      const camera = new THREE.PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = 200;
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      /* Licht */
+      scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+      const pointLight = new THREE.PointLight(0xffffff, 1.2, 400);
+      pointLight.position.set(100, 100, 100);
+      scene.add(pointLight);
+
+      /* Maussteuerung */
+      new THREE.OrbitControls(camera, renderer.domElement);
+
+      /* SVG laden */
+      const loader = new THREE.SVGLoader();
+      loader.load("/v/includes/ci/V-CIRCLE-1.svg", (data) => {
+        data.paths.forEach((path) => {
+          const material = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 1,
+            emissive: new THREE.Color(0xffffff),
+            emissiveIntensity: 1,
+          });
+
+          THREE.SVGLoader.createShapes(path).forEach((shape) => {
+            const mesh = new THREE.Mesh(
+              new THREE.ShapeGeometry(shape),
+              material
+            );
+            mesh.scale.multiplyScalar(0.25); // Größe anpassen
+            mesh.position.set(-100, -100, 0); // Logo grob zentrieren
+            scene.add(mesh);
+          });
+        });
+      });
+
+      /* Loop */
+      (function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+      })();
+    </script>
+  </body>
+</html>

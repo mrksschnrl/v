@@ -1,0 +1,70 @@
+/* === header.css – first_theme clean, fixed-safe === */
+
+/* HEADER-KONTAINER */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+  z-index: 1000;
+  border-bottom: 0 px solid #444;
+}
+
+/* Schutz für nachfolgenden Inhalt */
+body {
+  padding-top: 60px; /* Höhe des Headers */
+}
+
+/* TITELBEREICH */
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* LOGO-KONTAINER */
+.header-logo-wrapper {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo-wrapper .logo-group {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-group:hover .logo-v {
+  transition: transform 0.1s ease-out;
+  transform: scale(1.05);
+}
+
+/* Button-Link im Header */
+.button-link {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button-link:hover {
+  background-color: #222;
+  color: #ccc;
+}

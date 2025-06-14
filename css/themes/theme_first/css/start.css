@@ -1,0 +1,44 @@
+/* === start.css – Intro/Logo-Seite ================================= */
+
+/* Body nur, wenn class="start-page" gesetzt ist */
+body.start-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* volle Höhe, kein Scroll-Gap */
+  background: #000;
+  font-family: "Roboto Slab", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Logo-Wrapper bleibt mittig und responsiv */
+.logo-center-wrapper {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Skalierbares Logo – reagiert auf Browser-Zoom */
+.logo-center-wrapper img,
+.logo-center-wrapper svg {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 10px rgba(237, 184, 27, 0.92));
+}
+
+.logo-center-wrapper a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo-center-wrapper a:hover {
+  cursor: pointer;
+}

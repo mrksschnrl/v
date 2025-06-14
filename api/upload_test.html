@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meta Upload Test</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        background: #111;
+        color: #eee;
+      }
+      input,
+      textarea,
+      button {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+        font-family: monospace;
+      }
+      textarea {
+        height: 120px;
+      }
+      pre {
+        background: #222;
+        padding: 1em;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 upload_meta.php Test</h1>
+
+    <label>Dateiname (.meta.txt):</label>
+    <input id="filename" value="test123.meta.txt" />
+
+    <label>Inhalt:</label>
+    <textarea id="content">
+filename: test123.mp4\nsize: 123456\nlastModified: 2025-05-12T18:00:00Z\ntype: video/mp4</textarea
+    >
+
+    <button id="upload">✅ Upload starten</button>
+
+    <h2>Antwort:</h2>
+    <pre id="response">Noch nichts gesendet…</pre>
+
+    <script>
+      document.getElementById("upload").addEventListener("click", async () => {
+        const filename = document.getElementById("filename").value.trim();
+        const content = document.getElementById("content").value;
+
+        const resEl = document.getElementById("response");
+        resEl.textContent = "⏳ Sende...";
+
+        try {
+          const response = await fetch("upload_meta.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ filename, content }),
+          });
+
+          const result = await response.json();
+          resEl.textContent = JSON.stringify(result, null, 2);
+        } catch (err) {
+          resEl.textContent = "❌ FEHLER: " + err.message;
+        }
+      });
+    </script>
+  </body>
+</html>

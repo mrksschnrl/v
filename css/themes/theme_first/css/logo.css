@@ -1,0 +1,42 @@
+/* === Gemeinsames Logo-Layer ========================================= */
+
+.logo-group {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  max-width: 150px;
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Kreis + V deckungsgleich */
+.logo-inner .logo-circle,
+.logo-inner .logo-v {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* weiß auf dunkel */
+  pointer-events: none;
+}
+
+/* 3D-Canvas liegt darüber */
+#logo-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+}

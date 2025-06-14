@@ -1,0 +1,11 @@
+body { background:#121212; color:#eee; font-family:sans-serif; padding:2rem; }
+.listener-banner {
+    background: #333;
+    padding: 1em;
+    color: #0f0;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #444;
+}

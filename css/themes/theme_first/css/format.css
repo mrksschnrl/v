@@ -1,0 +1,18 @@
+/* === format.css – projektspezifische Styles === */
+
+/* Wrapper bündig zum 2-vw-Header-Rand */
+.file-list-wrapper {
+  width: 96vw; /* 100 – 2 – 2 */
+  margin: 0 0 0 var(--side-space);
+  padding: 0;
+  text-align: left;
+}
+
+/* Sortier-Links */
+.sort-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}

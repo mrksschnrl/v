@@ -1,0 +1,4 @@
+Meta-Generator gestartet! (2025-06-10 13:48:56)
+Input-Ordner: /var/www/html/v/packages/file-sort/../../users/accounts/mrks/uploads
+Filter: Von: 2025-06-04 | Bis: 2025-06-10
+Keine Dateien im Input-Ordner gefunden!

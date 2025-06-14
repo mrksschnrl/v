@@ -1,0 +1,67 @@
+/* === layout.css – Gemeinsames Layout für File Sorter & Formulare === */
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.logo-center-wrapper {
+  margin-bottom: 2rem;
+}
+
+.container h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+select {
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+.output-box {
+  background: #222;
+  color: #eee;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 1px solid #333;
+  margin-bottom: 2rem;
+}
+
+#source-path,
+#destination-path {
+  color: #ccc;
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 1rem;
+}

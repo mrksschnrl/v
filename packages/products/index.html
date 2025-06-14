@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Product Box – TXT EXTENSION</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    model-viewer {
+      width: 600px;
+      height: 600px;
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer src="box.glb"
+                alt="3D-Box von STREAM TOOLS – TXT EXTENSION"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                interaction-prompt="none"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                exposure="1.2"
+                environment-image="neutral"
+                poster="box_texture_front.png">
+  </model-viewer>
+</body>
+</html>

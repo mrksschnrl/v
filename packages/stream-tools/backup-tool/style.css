@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.controls {
+  margin-bottom: 15px;
+}
+button {
+  margin: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+#progressbar {
+  width: 100%;
+  background: #333;
+  height: 24px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+#bar {
+  height: 100%;
+  background: #4caf50;
+  text-align: center;
+  color: #000;
+  line-height: 24px;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+pre {
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 500px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}

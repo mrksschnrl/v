@@ -1,0 +1,18 @@
+
+/* === base.css – Grundstruktur & Reset === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto Slab', serif;
+  background-color: #111;
+  color: #eee;
+}

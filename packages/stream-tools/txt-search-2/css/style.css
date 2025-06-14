@@ -1,0 +1,93 @@
+/* Basislayout */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+}
+
+.theme-controls label {
+  margin-right: 1rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  width: 60%;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+button, select {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+ul#results-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#results-list li {
+  margin-bottom: 1rem;
+  background: var(--result-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  white-space: pre-wrap;
+  border: 1px solid var(--result-border);
+}
+
+/* Theme: Minimal */
+.theme-minimal {
+  --header-bg: #eee;
+  --header-text: #111;
+  --result-bg: #f9f9f9;
+  --result-border: #ccc;
+  background: #fff;
+  color: #000;
+}
+
+/* Theme: Modern */
+.theme-modern {
+  --header-bg: #2c3e50;
+  --header-text: #ecf0f1;
+  --result-bg: #ecf0f1;
+  --result-border: #95a5a6;
+  background: #f0f0f0;
+  color: #2c3e50;
+}
+
+/* Farbmodus: Dunkel */
+.theme-dark {
+  --header-bg: #111;
+  --header-text: #eee;
+  --result-bg: #222;
+  --result-border: #444;
+  background: #000;
+  color: #eee;
+}
+#modal-close {
+  position: absolute;
+  top: -1.5em;
+  right: -1.5em;
+  background: #fff;
+  color: #000;
+  padding: 0.3em 0.6em;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}

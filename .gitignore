@@ -23,3 +23,5 @@ Thumbs.db
 file-sort.zip
 log/
 output/
+packages/getfiles/files/*.zip
+packages/getfiles/files/*.zip
