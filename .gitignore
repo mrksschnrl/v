@@ -25,3 +25,13 @@ log/
 output/
 packages/getfiles/files/*.zip
 packages/getfiles/files/*.zip
+
+# --- Serverzeug, nicht committen ---
+/vendor/
+/logs/
+/packages/getfiles/files/
+/packages/stream-tools/stream-create/logs/
+/packages/stream-tools/stream-create/output_m3u8/
+*.mp3
+*.mp4
+*.zip
