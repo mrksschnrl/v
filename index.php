@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->safeLoad();
@@ -13,13 +12,13 @@ if ($_ENV['APP_ENV'] !== 'production') {
 define('UPLOAD_ROOT', rtrim($_ENV['UPLOAD_ROOT'] ?? __DIR__ . '/../output', '/'));
 define('LOG_PATH',    rtrim($_ENV['LOG_PATH']    ?? __DIR__ . '/../log',    '/'));
 
-
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 /* Theme-Ordner mit allen CSS-Dateien */
 $themeBase = '/v/css/themes/theme_first/css';
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
 
